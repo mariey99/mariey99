@@ -1,9 +1,51 @@
-proxy-groups:
+mixed-port: 7890
+allow-lan: true
+mode: rule
+log-level: info
+external-controller: :9090
 
-  - name: 🚀 手动切换
-    type: select
-    proxies:
-      - ⚡ 自动选择
+
+dns:
+  enable: true
+  listen: 0.0.0.0:1053
+
+  default-nameserver:
+    - 223.5.5.5
+    - 8.8.8.8
+    - 1.1.1.1
+
+  proxy-server-nameserver:
+    - https://dns.alidns.com/dns-query
+
+  nameserver-policy:
+    "geosite:gfw,geolocation-cn":
+      - https://1.1.1.1/dns-query#🚀 手动切换
+      - https://1.0.0.1/dns-query#🚀 手动切换
+      - https://8.8.8.8/dns-query#🚀 手动切换
+
+  nameserver:
+    - https://dns.alidns.com/dns-query
+    - https://doh.pub/dns-query
+    - https://8.8.8.8/dns-query#🚀 手动切换
+
+  fallback:
+    - https://1.1.1.1/dns-query#🚀 手动切换
+    - https://1.0.0.1/dns-query#🚀 手动切换
+    - https://8.8.8.8/dns-query#🚀 手动切换
+
+  fallback-filter:
+    geoip: false
+    geoip-code: CN
+    ipcidr:
+      - 240.0.0.0/4
+
+  fake-ip-filter:
+    - +.lan
+    - +.microsoft*.com
+    - localhost.ptlogin2.qq.com
+
+
+proxy-groups:
 
   - name: ⚡ 自动选择
     type: url-test
@@ -12,7 +54,152 @@ proxy-groups:
     tolerance: 50
 
 
+  - name: 🚀 手动切换
+    type: select
+
+
+  - name: 🎯 全球直连
+    type: select
+    proxies:
+      - DIRECT
+
+
+  - name: 🛑 广告拦截
+    type: select
+    proxies:
+      - REJECT
+
+
+  - name: 🐟 漏网之鱼
+    type: select
+
+
+
+rule-providers:
+
+  LocalAreaNetwork:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/LocalAreaNetwork.list
+    path: ./ruleset/LocalAreaNetwork.list
+    interval: 86400
+
+
+  UnBan:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/UnBan.list
+    path: ./ruleset/UnBan.list
+    interval: 86400
+
+
+  BanAD:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/BanAD.list
+    path: ./ruleset/BanAD.list
+    interval: 86400
+
+
+  BanEasyList:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/BanEasyList.list
+    path: ./ruleset/BanEasyList.list
+    interval: 86400
+
+
+  BanEasyListChina:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/BanEasyListChina.list
+    path: ./ruleset/BanEasyListChina.list
+    interval: 86400
+
+
+  BanEasyPrivacy:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/BanEasyPrivacy.list
+    path: ./ruleset/BanEasyPrivacy.list
+    interval: 86400
+
+
+  Adobe:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Ruleset/Adobe.list
+    path: ./ruleset/Adobe.list
+    interval: 86400
+
+
+  ProxyGFW:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/ProxyGFWlist.list
+    path: ./ruleset/ProxyGFW.list
+    interval: 86400
+
+
+  ChinaIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/ChinaIp.list
+    path: ./ruleset/ChinaIp.list
+    interval: 86400
+
+
+  ChinaDomain:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/ChinaDomain.list
+    path: ./ruleset/ChinaDomain.list
+    interval: 86400
+
+
+  ChinaCompanyIp:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/ChinaCompanyIp.list
+    path: ./ruleset/ChinaCompanyIp.list
+    interval: 86400
+
+
+  Download:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Download.list
+    path: ./ruleset/Download.list
+    interval: 86400
+
+
+
 rules:
 
+  - RULE-SET,LocalAreaNetwork,🎯 全球直连
+
+  - RULE-SET,UnBan,🎯 全球直连
+
+  - RULE-SET,BanAD,🛑 广告拦截
+
+  - RULE-SET,BanEasyList,🛑 广告拦截
+
+  - RULE-SET,BanEasyListChina,🛑 广告拦截
+
+  - RULE-SET,BanEasyPrivacy,🛑 广告拦截
+
+  - RULE-SET,Adobe,🎯 全球直连
+
+  - RULE-SET,ProxyGFW,🚀 手动切换
+
+  - RULE-SET,ChinaIp,🎯 全球直连
+
+  - RULE-SET,ChinaDomain,🎯 全球直连
+
+  - RULE-SET,ChinaCompanyIp,🎯 全球直连
+
+  - RULE-SET,Download,🎯 全球直连
+
   - GEOIP,CN,🎯 全球直连
+
   - MATCH,🐟 漏网之鱼
