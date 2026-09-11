@@ -3,16 +3,20 @@ proxy-groups:
   - name: 🚀 手动切换
     type: select
     proxies:
-      - ⚡ 自动选择
+      - 非域名1-A
+      - 非域名2-A
+      - 域名1-A
 
   - name: ⚡ 自动选择
     type: url-test
+    proxies:
+      - 非域名1-A
+      - 非域名2-A
+      - 域名1-A
     url: https://www.gstatic.com/generate_204
     interval: 300
-    tolerance: 50
 
 
 rules:
 
-  - GEOIP,CN,🎯 全球直连
-  - MATCH,🐟 漏网之鱼
+  - MATCH,🚀 手动切换
