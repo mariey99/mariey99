@@ -72,10 +72,10 @@ proxy-groups:
 
   - name: 🐟 漏网之鱼
     type: select
-      proxies:
-        - ⚡ 自动选择
+    proxies:
         - 🚀 手动切换
-
+        - ⚡ 自动选择
+        
 
 rule-providers:
 
