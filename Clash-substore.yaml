@@ -56,8 +56,6 @@ proxy-groups:
 
   - name: 🚀 手动切换
     type: select
-    proxies:
-      - REJECT
 
 
   - name: 🎯 全球直连
