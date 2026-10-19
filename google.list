@@ -1,4 +1,5 @@
-# 内容：Google
+# SOURCE LIST ONLY: consolidated into Google-services.list; do not add this file as a separate provider.
+
 DOMAIN,voice.telephony.goog
 DOMAIN-SUFFIX,0emm.com
 DOMAIN-SUFFIX,1e100.net
