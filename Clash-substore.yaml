@@ -174,32 +174,18 @@ rule-providers:
     path: ./ruleset/Steam-services.list
     interval: 86400
 
-  LocalCustom:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/mariey99/mariey99/main/jichuguize2.list
-    path: ./ruleset/jichuguize2.list
-    interval: 86400
-
-  DirectCustom:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/mariey99/mariey99/main/jichuguize3.list
-    path: ./ruleset/jichuguize3.list
-    interval: 86400
-
-  UnbreakWhitelist:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/mariey99/mariey99/main/jichuguize6.list
-    path: ./ruleset/jichuguize6.list
-    interval: 86400
-
   RouterDomains:
     type: http
     behavior: classical
     url: https://raw.githubusercontent.com/mariey99/mariey99/main/jichuguize7.list
     path: ./ruleset/jichuguize7.list
+    interval: 86400
+
+  ForeignMedia:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/foreign%20media.list
+    path: ./ruleset/foreign-media.list
     interval: 86400
 
   GoogleServices:
@@ -230,6 +216,13 @@ rule-providers:
     path: ./ruleset/ChinaIp.list
     interval: 86400
 
+  ChinaIpV6:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/ChinaIpV6.list
+    path: ./ruleset/ChinaIpV6.list
+    interval: 86400
+
   ChinaDomain:
     type: http
     behavior: classical
@@ -255,13 +248,9 @@ rules:
 
   - RULE-SET,LocalAreaNetwork,全球直连
 
-  - RULE-SET,LocalCustom,全球直连
-
   - RULE-SET,RouterDomains,全球直连
 
   - RULE-SET,UnBan,全球直连
-
-  - RULE-SET,UnbreakWhitelist,全球直连
 
   - RULE-SET,BanAD,广告拦截
 
@@ -281,6 +270,8 @@ rules:
 
   - RULE-SET,SteamServices,Steam服务
 
+  - RULE-SET,ForeignMedia,手动切换
+
   - RULE-SET,ProxyGeneral,手动切换
 
   - RULE-SET,GoogleServices,手动切换
@@ -291,13 +282,13 @@ rules:
   - PROCESS-NAME,com.google.android.play.games,手动切换
   - PROCESS-NAME,BackupandSync,手动切换
 
-  - RULE-SET,DirectCustom,全球直连
+  - RULE-SET,ChinaDomain,全球直连
 
   - RULE-SET,ProxyGFW,手动切换
 
   - RULE-SET,ChinaIp,全球直连
 
-  - RULE-SET,ChinaDomain,全球直连
+  - RULE-SET,ChinaIpV6,全球直连
 
   - RULE-SET,ChinaCompanyIp,全球直连
 
