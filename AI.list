@@ -1,4 +1,7 @@
-# 内容：AI列表
+# LEGACY SOURCE LIST
+# Canonical AI routing list: AI-services.list
+# This file is retained as a source archive; do not add it as a separate provider.
+
 
 # Chatgpt
 DOMAIN,browser-intake-datadoghq.com
