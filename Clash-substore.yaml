@@ -177,8 +177,8 @@ rule-providers:
   RouterDomains:
     type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/mariey99/mariey99/main/jichuguize7.list
-    path: ./ruleset/jichuguize7.list
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/Local-routing.list
+    path: ./ruleset/Local-routing.list
     interval: 86400
 
   ForeignMedia:
