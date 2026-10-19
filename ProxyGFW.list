@@ -1,4 +1,4 @@
-# 代理列表
+# Proxy routing list: GFW and user-maintained domain rules.
 
 # MyList && Other
 DOMAIN-SUFFIX,1password.com
