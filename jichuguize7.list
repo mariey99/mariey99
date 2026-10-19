@@ -1,3 +1,6 @@
+# Local router and reserved-domain direct rules
+# Includes router login domains, local network suffixes, and reverse-DNS names.
+
 DOMAIN,instant.arubanetworks.com
 DOMAIN,setmeup.arubanetworks.com
 DOMAIN,asusrouter.com
