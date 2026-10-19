@@ -138,7 +138,7 @@ rule-providers:
   ProxyGFW:
     type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/ProxyGFWlist.list
+    url: https://raw.githubusercontent.com/mariey99/mariey99/refs/heads/main/ProxyGFW.list
     path: ./ruleset/ProxyGFW.list
     interval: 86400
 
