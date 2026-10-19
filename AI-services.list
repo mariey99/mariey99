@@ -123,3 +123,4 @@ DOMAIN,webchannel-alkalimakersuite-pa.clients6.google.com
 DOMAIN,www.bing.com
 IP-CIDR,24.199.123.28/32,no-resolve
 IP-CIDR,64.23.132.171/32,no-resolve
+DOMAIN-SUFFIX,deepseek.com
