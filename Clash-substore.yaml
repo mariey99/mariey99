@@ -192,6 +192,7 @@ rules:
 
   - RULE-SET,Adobe,🎯 全球直连
 
+  - RULE-SET,AIServices,🤖 AI服务
   - RULE-SET,ProxyGFW,🚀 手动切换
 
   - RULE-SET,ChinaIp,🎯 全球直连
