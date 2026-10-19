@@ -209,6 +209,13 @@ rule-providers:
     path: ./ruleset/Google-services.list
     interval: 86400
 
+  ProxyGeneral:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/Proxy.list
+    path: ./ruleset/Proxy.list
+    interval: 86400
+
   ProxyGFW:
     type: http
     behavior: classical
@@ -273,6 +280,8 @@ rules:
   - RULE-SET,MicrosoftServices,微软服务
 
   - RULE-SET,SteamServices,Steam服务
+
+  - RULE-SET,ProxyGeneral,手动切换
 
   - RULE-SET,GoogleServices,手动切换
 
