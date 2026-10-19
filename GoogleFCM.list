@@ -1,4 +1,5 @@
-# Google Firebase Cloud Messaging (FCM) push-service domains and IPv4 endpoints.
+# SOURCE LIST ONLY: FCM domains and IPs are consolidated into Google-services.list and routed through proxy.
+
 # Entries: 35 rules.
 DOMAIN,alt1-mtalk.google.com
 DOMAIN,alt2-mtalk.google.com
