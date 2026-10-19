@@ -219,7 +219,7 @@ rule-providers:
   ProxyGFW:
     type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/mariey99/mariey99/refs/heads/main/ProxyGFW.list
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/ProxyGFW.list
     path: ./ruleset/ProxyGFW.list
     interval: 86400
 
@@ -247,7 +247,7 @@ rule-providers:
   Download:
     type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/mariey99/mariey99/main/Download.list
+    url: https://raw.githubusercontent.com/SubConv/ZJU-Rule/main/Clash/Download.list
     path: ./ruleset/Download.list
     interval: 86400
 
