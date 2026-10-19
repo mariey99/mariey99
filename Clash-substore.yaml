@@ -155,6 +155,34 @@ rule-providers:
     interval: 86400
 
 
+  AIServices:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/AI-services.list
+    path: ./ruleset/AI-services.list
+    interval: 86400
+
+  AppleServices:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/Apple-services.list
+    path: ./ruleset/Apple-services.list
+    interval: 86400
+
+  MicrosoftServices:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/Microsoft-services.list
+    path: ./ruleset/Microsoft-services.list
+    interval: 86400
+
+  SteamServices:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/Steam-services.list
+    path: ./ruleset/Steam-services.list
+    interval: 86400
+
   ProxyGFW:
     type: http
     behavior: classical
@@ -220,7 +248,11 @@ rules:
 
   - RULE-SET,SteamServices,Steam服务
 
-  - RULE-SET,AIServices,🤖 AI服务
+  - RULE-SET,AppleServices,Apple服务
+
+  - RULE-SET,MicrosoftServices,微软服务
+
+  - RULE-SET,SteamServices,Steam服务
   - RULE-SET,ProxyGFW,手动切换
 
   - RULE-SET,ChinaIp,全球直连
