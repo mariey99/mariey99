@@ -202,18 +202,11 @@ rule-providers:
     path: ./ruleset/jichuguize7.list
     interval: 86400
 
-  GoogleCN:
+  GoogleServices:
     type: http
     behavior: classical
-    url: https://raw.githubusercontent.com/mariey99/mariey99/main/GoogleCN.list
-    path: ./ruleset/GoogleCN.list
-    interval: 86400
-
-  GoogleFCM:
-    type: http
-    behavior: classical
-    url: https://raw.githubusercontent.com/mariey99/mariey99/main/GoogleFCM.list
-    path: ./ruleset/GoogleFCM.list
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/Google-services.list
+    path: ./ruleset/Google-services.list
     interval: 86400
 
   ProxyGFW:
@@ -271,10 +264,6 @@ rules:
 
   - RULE-SET,BanEasyPrivacy,广告拦截
 
-  - RULE-SET,GoogleFCM,全球直连
-
-  - RULE-SET,GoogleCN,全球直连
-
   - RULE-SET,Adobe,全球直连
 
   - RULE-SET,AIServices,AI服务
@@ -284,6 +273,14 @@ rules:
   - RULE-SET,MicrosoftServices,微软服务
 
   - RULE-SET,SteamServices,Steam服务
+
+  - RULE-SET,GoogleServices,手动切换
+
+  - PROCESS-NAME,com.android.vending,手动切换
+  - PROCESS-NAME,com.google.android.gms,手动切换
+  - PROCESS-NAME,com.google.android.gsf,手动切换
+  - PROCESS-NAME,com.google.android.play.games,手动切换
+  - PROCESS-NAME,BackupandSync,手动切换
 
   - RULE-SET,DirectCustom,全球直连
 
