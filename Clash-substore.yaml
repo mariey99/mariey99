@@ -18,19 +18,19 @@ dns:
 
   nameserver-policy:
     "geosite:gfw,geolocation-cn":
-      - https://1.1.1.1/dns-query#手动切换
-      - https://1.0.0.1/dns-query#手动切换
-      - https://8.8.8.8/dns-query#手动切换
+      - https://1.1.1.1/dns-query#🎛️ 手动切换
+      - https://1.0.0.1/dns-query#🎛️ 手动切换
+      - https://8.8.8.8/dns-query#🎛️ 手动切换
 
   nameserver:
     - https://dns.alidns.com/dns-query
     - https://doh.pub/dns-query
-    - https://8.8.8.8/dns-query#手动切换
+    - https://8.8.8.8/dns-query#🎛️ 手动切换
 
   fallback:
-    - https://1.1.1.1/dns-query#手动切换
-    - https://1.0.0.1/dns-query#手动切换
-    - https://8.8.8.8/dns-query#手动切换
+    - https://1.1.1.1/dns-query#🎛️ 手动切换
+    - https://1.0.0.1/dns-query#🎛️ 手动切换
+    - https://8.8.8.8/dns-query#🎛️ 手动切换
 
   fallback-filter:
     geoip: false
@@ -45,55 +45,55 @@ dns:
 
 proxy-groups:
 
-  - name: 自动选择
+  - name: ⚡ 自动选择
     type: url-test
     url: https://www.gstatic.com/generate_204
     interval: 300
     tolerance: 50
     lazy: true
 
-  - name: 手动切换
+  - name: 🎛️ 手动切换
     type: select
 
-  - name: AI服务
-    type: select
-    proxies:
-      - 手动切换
-      - 自动选择
-
-  - name: Apple服务
+  - name: 🤖 AI服务
     type: select
     proxies:
-      - 手动切换
-      - 自动选择
+      - 🎛️ 手动切换
+      - ⚡ 自动选择
 
-  - name: 微软服务
+  - name: 🍎 Apple服务
     type: select
     proxies:
-      - 手动切换
-      - 自动选择
+      - 🎛️ 手动切换
+      - ⚡ 自动选择
 
-  - name: Steam服务
+  - name: 🪟 微软服务
     type: select
     proxies:
-      - 手动切换
-      - 自动选择
+      - 🎛️ 手动切换
+      - ⚡ 自动选择
 
-  - name: 全球直连
+  - name: 🎮 Steam服务
+    type: select
+    proxies:
+      - 🎛️ 手动切换
+      - ⚡ 自动选择
+
+  - name: 🌐 全球直连
     type: select
     proxies:
       - DIRECT
 
-  - name: 广告拦截
+  - name: 🚫 广告拦截
     type: select
     proxies:
       - REJECT
 
-  - name: 漏网之鱼
+  - name: 🎯 漏网之鱼
     type: select
     proxies:
-      - 手动切换
-      - 自动选择
+      - 🎛️ 手动切换
+      - ⚡ 自动选择
 
 rule-providers:
 
@@ -246,55 +246,55 @@ rule-providers:
 
 rules:
 
-  - RULE-SET,LocalAreaNetwork,全球直连
-  - IP-CIDR,10.0.0.0/8,全球直连,no-resolve
+  - RULE-SET,LocalAreaNetwork,🌐 全球直连
+  - IP-CIDR,10.0.0.0/8,🌐 全球直连,no-resolve
 
-  - RULE-SET,RouterDomains,全球直连
+  - RULE-SET,RouterDomains,🌐 全球直连
 
-  - RULE-SET,UnBan,全球直连
+  - RULE-SET,UnBan,🌐 全球直连
 
-  - RULE-SET,BanAD,广告拦截
+  - RULE-SET,BanAD,🚫 广告拦截
 
-  - RULE-SET,BanEasyList,广告拦截
+  - RULE-SET,BanEasyList,🚫 广告拦截
 
-  - RULE-SET,BanEasyListChina,广告拦截
+  - RULE-SET,BanEasyListChina,🚫 广告拦截
 
-  - RULE-SET,BanEasyPrivacy,广告拦截
+  - RULE-SET,BanEasyPrivacy,🚫 广告拦截
 
-  - RULE-SET,Adobe,全球直连
+  - RULE-SET,Adobe,🌐 全球直连
 
-  - RULE-SET,AIServices,AI服务
+  - RULE-SET,AIServices,🤖 AI服务
 
-  - RULE-SET,AppleServices,Apple服务
+  - RULE-SET,AppleServices,🍎 Apple服务
 
-  - RULE-SET,MicrosoftServices,微软服务
+  - RULE-SET,MicrosoftServices,🪟 微软服务
 
-  - RULE-SET,SteamServices,Steam服务
+  - RULE-SET,SteamServices,🎮 Steam服务
 
-  - RULE-SET,ForeignMedia,手动切换
+  - RULE-SET,ForeignMedia,🎛️ 手动切换
 
-  - RULE-SET,ProxyGeneral,手动切换
+  - RULE-SET,ProxyGeneral,🎛️ 手动切换
 
-  - RULE-SET,GoogleServices,手动切换
+  - RULE-SET,GoogleServices,🎛️ 手动切换
 
-  - PROCESS-NAME,com.android.vending,手动切换
-  - PROCESS-NAME,com.google.android.gms,手动切换
-  - PROCESS-NAME,com.google.android.gsf,手动切换
-  - PROCESS-NAME,com.google.android.play.games,手动切换
-  - PROCESS-NAME,BackupandSync,手动切换
+  - PROCESS-NAME,com.android.vending,🎛️ 手动切换
+  - PROCESS-NAME,com.google.android.gms,🎛️ 手动切换
+  - PROCESS-NAME,com.google.android.gsf,🎛️ 手动切换
+  - PROCESS-NAME,com.google.android.play.games,🎛️ 手动切换
+  - PROCESS-NAME,BackupandSync,🎛️ 手动切换
 
-  - RULE-SET,ChinaDomain,全球直连
+  - RULE-SET,ChinaDomain,🌐 全球直连
 
-  - RULE-SET,ProxyGFW,手动切换
+  - RULE-SET,ProxyGFW,🎛️ 手动切换
 
-  - RULE-SET,ChinaIp,全球直连
+  - RULE-SET,ChinaIp,🌐 全球直连
 
-  - RULE-SET,ChinaIpV6,全球直连
+  - RULE-SET,ChinaIpV6,🌐 全球直连
 
-  - RULE-SET,ChinaCompanyIp,全球直连
+  - RULE-SET,ChinaCompanyIp,🌐 全球直连
 
-  - RULE-SET,Download,全球直连
+  - RULE-SET,Download,🌐 全球直连
 
-  - GEOIP,CN,全球直连
+  - GEOIP,CN,🌐 全球直连
 
-  - MATCH,漏网之鱼
+  - MATCH,🎯 漏网之鱼
