@@ -183,6 +183,48 @@ rule-providers:
     path: ./ruleset/Steam-services.list
     interval: 86400
 
+  LocalCustom:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/jichuguize2.list
+    path: ./ruleset/jichuguize2.list
+    interval: 86400
+
+  DirectCustom:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/jichuguize3.list
+    path: ./ruleset/jichuguize3.list
+    interval: 86400
+
+  UnbreakWhitelist:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/jichuguize6.list
+    path: ./ruleset/jichuguize6.list
+    interval: 86400
+
+  RouterDomains:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/jichuguize7.list
+    path: ./ruleset/jichuguize7.list
+    interval: 86400
+
+  GoogleCN:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/GoogleCN.list
+    path: ./ruleset/GoogleCN.list
+    interval: 86400
+
+  GoogleFCM:
+    type: http
+    behavior: classical
+    url: https://raw.githubusercontent.com/mariey99/mariey99/main/GoogleFCM.list
+    path: ./ruleset/GoogleFCM.list
+    interval: 86400
+
   ProxyGFW:
     type: http
     behavior: classical
@@ -225,9 +267,16 @@ rule-providers:
 
 rules:
 
+
   - RULE-SET,LocalAreaNetwork,全球直连
 
+  - RULE-SET,LocalCustom,全球直连
+
+  - RULE-SET,RouterDomains,全球直连
+
   - RULE-SET,UnBan,全球直连
+
+  - RULE-SET,UnbreakWhitelist,全球直连
 
   - RULE-SET,BanAD,广告拦截
 
@@ -236,6 +285,10 @@ rules:
   - RULE-SET,BanEasyListChina,广告拦截
 
   - RULE-SET,BanEasyPrivacy,广告拦截
+
+  - RULE-SET,GoogleFCM,全球直连
+
+  - RULE-SET,GoogleCN,全球直连
 
   - RULE-SET,Adobe,全球直连
 
@@ -247,6 +300,7 @@ rules:
 
   - RULE-SET,SteamServices,Steam服务
 
+  - RULE-SET,DirectCustom,全球直连
 
   - RULE-SET,ProxyGFW,手动切换
 
