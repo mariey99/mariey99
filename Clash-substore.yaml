@@ -223,7 +223,6 @@ rule-providers:
     interval: 86400
 
 
-
 rules:
 
   - RULE-SET,LocalAreaNetwork,全球直连
@@ -247,11 +246,6 @@ rules:
   - RULE-SET,MicrosoftServices,微软服务
 
   - RULE-SET,SteamServices,Steam服务
-
-
-
-
-
 
 
   - RULE-SET,ProxyGFW,手动切换
