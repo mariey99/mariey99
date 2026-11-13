@@ -47,6 +47,7 @@ proxy-groups:
 
   - name: ⚡ 自动选择
     type: url-test
+    include-all-proxies: true
     url: https://www.gstatic.com/generate_204
     interval: 1800
     tolerance: 50
@@ -54,6 +55,7 @@ proxy-groups:
 
   - name: 🎛️ 手动切换
     type: select
+    include-all-proxies: true
 
   - name: 🤖 AI服务
     type: select
