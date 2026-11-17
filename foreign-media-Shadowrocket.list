@@ -1,5 +1,7 @@
 # Shadowrocket-compatible foreign media rules
-# Derived from foreign media.list. PROCESS-NAME, URL-REGEX, and IP-ASN entries are omitted for iOS compatibility.
+# Derived from foreign media.list.
+# PROCESS-NAME entries are omitted because iOS Shadowrocket cannot match app process names.
+# USER-AGENT, URL-REGEX, IP-ASN, IP-CIDR6 and domain/IP rules are retained.
 # 内容：国外媒体
 
 # tiktok
@@ -823,6 +825,7 @@ IP-CIDR,54.162.243.80/32,no-resolve
 IP-CIDR,54.173.34.141/32,no-resolve
 IP-CIDR,54.235.23.242/32,no-resolve
 IP-CIDR,54.93.124.31/32,no-resolve
+IP-ASN,32934,no-resolve
 
 # whatsapp
 DOMAIN,graph.facebook.com
@@ -1074,6 +1077,7 @@ DOMAIN-SUFFIX,amazonvideo.com
 DOMAIN-SUFFIX,media-amazon.com
 DOMAIN-SUFFIX,pv-cdn.net
 DOMAIN-SUFFIX,seattlespheres.com
+URL-REGEX,^https?:\/\/www\.amazon\.com\/(Amazon-Video|gp\/video)\/
 
 # AppleNews
 DOMAIN,gspe1-ssl.ls.apple.com
@@ -1381,6 +1385,7 @@ DOMAIN-SUFFIX,amazonvideo.com
 DOMAIN-SUFFIX,media-amazon.com
 DOMAIN-SUFFIX,pv-cdn.net
 DOMAIN-SUFFIX,seattlespheres.com
+URL-REGEX,^https?:\/\/www\.amazon\.com\/(Amazon-Video|gp\/video)\/
 
 DOMAIN,gspe1-ssl.ls.apple.com
 
